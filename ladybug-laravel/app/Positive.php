@@ -4,13 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Log extends Model
+class Positive extends Model
 {
     protected $fillable = [
       'content', 
-      'before_rating', 
-      'after_rating', 
-      'distortion'
     ];
 
 
@@ -19,8 +16,7 @@ class Log extends Model
       return $this->belongsTo('App\User');
     }
 
-    public function positives() 
-    {
-      return $this->belongsToMany('App\Positive');
+    public function logs() {
+      return $this->belongsToMany('App\Log');
     }
- }
+}

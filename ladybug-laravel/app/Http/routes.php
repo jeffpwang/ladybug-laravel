@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('logs', 'LogsController@index');
+
+Route::get('logs/create', 'LogsController@create');
+
+Route::get('logs/{id}', 'LogsController@show');
+
+

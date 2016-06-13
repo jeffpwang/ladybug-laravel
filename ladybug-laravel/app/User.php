@@ -28,4 +28,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Log');
     }
+
+    public function positives() 
+    {
+        return $this->hasMany('App\Positive');
+    }
 }
