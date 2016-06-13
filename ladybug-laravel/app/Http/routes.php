@@ -21,4 +21,9 @@ Route::get('logs/create', 'LogsController@create');
 
 Route::get('logs/{id}', 'LogsController@show');
 
+Route::post('logs', 'LogsController@store');
 
+Route::controllers([
+  'auth' => 'Auth\AuthController', 
+  'password' => 'Auth\PasswordController',
+  ]);

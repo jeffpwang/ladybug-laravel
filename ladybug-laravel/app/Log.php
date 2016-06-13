@@ -2,7 +2,9 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+
 
 class Log extends Model
 {
@@ -10,8 +12,14 @@ class Log extends Model
       'content', 
       'before_rating', 
       'after_rating', 
-      'distortion'
+      'distortion', 
+      'added_on'
     ];
+
+    public function setAddedOnAttribute($date) 
+    {
+      $this->attributes['added_on'] = Carbon::createFromFormat('Y-m-d', $date);
+    }
 
 
     public function user() 

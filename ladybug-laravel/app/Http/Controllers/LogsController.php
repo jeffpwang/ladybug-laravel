@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Log;
-use Illuminate\Http\Request;
+use Request;
+use Carbon\Carbon;
 
 use App\Http\Requests;
 
@@ -10,7 +11,7 @@ class LogsController extends Controller
 {
     public function index() 
     {
-      $logs = Log::all();
+      $logs = Log::order_by('added_on', 'desc')->get();
 
       return view('logs.index', compact('logs'));
     }
@@ -32,5 +33,13 @@ class LogsController extends Controller
     }
 
 
+    public function store() 
+    {
+      $input = Request::all();
+
+      Log::create($input);
+
+      return redirect('logs');
+    }
 
 }

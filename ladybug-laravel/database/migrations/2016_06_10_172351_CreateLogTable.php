@@ -19,8 +19,8 @@ class CreateLogTable extends Migration
             $table->integer('before_rating');
             $table->integer('after_rating');
             $table->integer('distortion');
+            $table->timestamp('added_on');
             $table->timestamps();
-
         });
     }
 

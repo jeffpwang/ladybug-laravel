@@ -16,6 +16,7 @@ class CreatePositiveTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('content');
+            $table->timestamp('added_on');
             $table->timestamps();
         });
     }
